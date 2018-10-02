@@ -1,4 +1,4 @@
-package com.pure.pureathan.dummy;
+package com.pure.pureathan.main;
 
 import java.util.ArrayList;
 import java.util.HashMap;
