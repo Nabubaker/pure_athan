@@ -5,6 +5,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="In list layout"
+        android:textSize="25sp"
+        android:paddingLeft="15dp"
         tools:layout_editor_absoluteX="218dp"
         tools:layout_editor_absoluteY="103dp" />

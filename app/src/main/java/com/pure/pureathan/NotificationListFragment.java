@@ -33,8 +33,29 @@ public class NotificationListFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
 
-        //String[] notificationMethods = {"Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep"};
-        String[] notificationMethods = {};
+        String[] notificationMethods = {
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep",
+                "Mecca", "Medina", "Egypt", "Single Beep", "Double Beep", "Triple Beep"
+        };
+        //String[] notificationMethods = {};
 
         mAdapter = new NotificationListAdapter(notificationMethods);
         mRecyclerView.setAdapter(mAdapter);
