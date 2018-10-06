@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ public class NotificationListFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_notification_list, container, false);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.notification_list_recycler_view);
+
 
         /* Changes in content don't change the layout size of the RecyclerView */
         mRecyclerView.setHasFixedSize(true);

@@ -1,22 +1,19 @@
 package com.pure.pureathan;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 public class NotificationListAdapter extends RecyclerView.Adapter<NotificationListAdapter.NotificationHolder> {
-    private List<AthanItem> mDataset = new ArrayList<>();
+    private String[] mDataset;
 
     public NotificationListAdapter(String[] myDataset) {
-        int dataSetSize = myDataset.length;
-        for (int i=0;i<dataSetSize;i++){
-            mDataset.add(new AthanItem(myDataset[i]));
-        }
+        mDataset=myDataset;
     }
 
 
@@ -24,69 +21,42 @@ public class NotificationListAdapter extends RecyclerView.Adapter<NotificationLi
     public NotificationListAdapter.NotificationHolder onCreateViewHolder(
             ViewGroup parent, int viewType) {
 
-        RadioButton radioButton = (RadioButton) LayoutInflater.from(parent.getContext())
+        LinearLayout linearLayout = (LinearLayout) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.notification_list_item, parent, false);
 
-        NotificationHolder vh = new NotificationHolder(radioButton);
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView textView = v.findViewById(R.id.textView);
+            }
+        });
+        NotificationHolder vh = new NotificationHolder(linearLayout);
         return vh;
     }
 
 
     @Override
     public void onBindViewHolder(NotificationHolder holder, int position) {
-        AthanItem item = mDataset.get(position);
-        RadioButton radioButton = holder.getRadioButton();
-
-        radioButton.setChecked(item.isChecked());
-        radioButton.setText(item.getName());
+        LinearLayout linearLayout = holder.getLinearLayout();
+        TextView textView = (TextView) linearLayout.findViewById(R.id.textView);
+        textView.setText(mDataset[position]);
     }
 
     @Override
     public int getItemCount() {
-        return mDataset.size();
-    }
-
-    public void unCheckAll(){
-        int dataSetSize = mDataset.size();
-        for (int i=0;i<dataSetSize;i++){
-            mDataset.get(i).setChecked(false);
-        }
-    }
-
-    public void check(int position){
-        mDataset.get(position).setChecked(true);
+        return mDataset.length;
     }
 
     public static class NotificationHolder extends RecyclerView.ViewHolder {
-        private RadioButton mRadioButton;
+        private LinearLayout mLinearLayout;
 
-        public NotificationHolder(RadioButton radioButton) {
-            super(radioButton);
-            mRadioButton = radioButton;
+        public NotificationHolder(LinearLayout linearLayout) {
+            super(linearLayout);
+            mLinearLayout = linearLayout;
         }
 
-        public RadioButton getRadioButton() {
-            return mRadioButton;
-        }
-    }
-
-    private class AthanItem {
-        private String mName;
-        private boolean mIsChecked;
-
-        public AthanItem(String name){ this.mName=name;}
-
-        public String getName() {
-            return this.mName;
-        }
-
-        public boolean isChecked() {
-            return mIsChecked;
-        }
-
-        public void setChecked(boolean mIsChecked) {
-            this.mIsChecked = mIsChecked;
+        public LinearLayout getLinearLayout() {
+            return mLinearLayout;
         }
     }
-
 }
